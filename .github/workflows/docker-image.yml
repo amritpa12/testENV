@@ -11,9 +11,9 @@ jobs:
     - name: SSH into Unraid and Fetch Docker Environment Variable
       uses: appleboy/ssh-action@v0.1.3
       with:
-        host: ${{ secrets.UNRAID_IP }}  # Add your Unraid server's IP as a GitHub secret
+        host: '152-117-64-177'  # Add your Unraid server's IP as a GitHub secret
         username: 'root'  # Unraid’s root user
-        key: ${{ secrets.UNRAID_SSH_KEY }}  # Store the private SSH key as a secret
+        key: 'SHA256:49WpI+YfGdnZ+IZybxNdtj6G7n5yj97AJt3TRToM/1Q'  # Store the private SSH key as a secret
         script: |
           # Fetch the environment variable from the container
           docker exec sandboxRefresh printenv GITHUB_TOKEN  # Replace GITHUB_TOKEN with the desired variable
