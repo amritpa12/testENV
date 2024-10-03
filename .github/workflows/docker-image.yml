@@ -13,7 +13,7 @@ jobs:
       with:
         host: '152-117-64-177'  # Add your Unraid server's IP as a GitHub secret
         username: 'root'  # Unraid’s root user
-        key: 'SHA256:49WpI+YfGdnZ+IZybxNdtj6G7n5yj97AJt3TRToM/1Q'  # Store the private SSH key as a secret
+        key: ${{ secrets.SSH }}  # Store the private SSH key as a secret
         script: |
           # Fetch the environment variable from the container
           docker exec sandboxRefresh printenv GITHUB_TOKEN  # Replace GITHUB_TOKEN with the desired variable
